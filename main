@@ -1,0 +1,136 @@
+#include<bits/stdc++.h>
+using namespace std;
+string a; // 定义一个字符串变量a，用于存储用户输入的命令
+void answers() // 定义一个函数answers，用于处理用户输入的命令
+{
+    if(a=="cd <home>") // 如果用户输入的是"cd <home>"命令，输出">>at <home>"
+        cout << ">>at <home>" << endl;
+    else if(a=="ls") // 如果用户输入的是"ls"命令，输出">>file1.txt file2.txt"
+        cout << ">>file1.txt file2.txt" << endl;
+    else if(a=="pwd") // 如果用户输入的是"pwd"命令，输出">>/home"
+        cout << ">>/home" << endl;
+    else if(a=="exit") // 如果用户输入的是"exit"命令，输出">>exiting..."
+        cout << ">>exiting..." << endl;
+    else if(a=="mkdir new_folder") // 如果用户输入的是"mkdir new_folder"命令，输出">>new_folder created."
+        cout << ">>new_folder created." << endl;
+    else if(a=="rm new_folder") // 如果用户输入的是"rm new_folder"命令，输出">>new_folder deleted."
+        cout << ">>new_folder deleted." << endl;
+    else if(a=="cd file1.txt file2.txt") // 如果用户输入的是"cd file1.txt file2.txt"命令，输出">>file1.txt copied to file2.txt."
+        cout << ">>file1.txt copied to file2.txt." << endl;
+    else if(a=="mv file1.txt file2.txt") // 如果用户输入的是"mv file1.txt file2.txt"命令，输出">>file1.txt moved to file2.txt."
+        cout << ">>file1.txt moved to file2.txt." << endl;
+    else if(a=="cat file1.txt") // 如果用户输入的是"cat file1.txt"命令，输出">>Content of file1.txt:"
+        cout << ">>Content of file1.txt:" << endl;
+    else if(a=="echo 'Hello, World!'") // 如果用户输入的是"echo 'Hello, World!'"命令，输出">>Hello, World!"
+        cout << ">>Hello, World!" << endl;
+    else if(a=="date") // 如果用户输入的是"date"命令，输出">>Current date and time."
+        cout << ">>Current date and time." << endl;
+    else if(a=="cal") // 如果用户输入的是"cal"命令，输出">>Calendar."
+        cout << ">>Calendar." << endl;
+    else if(a=="man ls") // 如果用户输入的是"man ls"命令，输出">>manual for ls command."
+        cout << ">>manual for ls command." << endl;
+    else if(a=="man pwd") // 如果用户输入的是"man pwd"命令，输出">>manual for pwd command."
+        cout << ">>manual for pwd command." << endl;
+    else if(a=="man mkdir") // 如果用户输入的是"man mkdir"命令，输出">>manual for mkdir command."
+        cout << ">>manual for mkdir command." << endl;
+    else if(a=="man rm") // 如果用户输入的是"man rm"命令，输出">>manual for rm command."
+        cout << ">>manual for rm command." << endl;
+    else if(a=="man cd") // 如果用户输入的是"man cd"命令，输出">>manual for cd command."
+        cout << ">>manual for cd command." << endl;
+    else if(a=="man mv") // 如果用户输入的是"man mv"命令，输出">>manual for mv command."
+        cout << ">>manual for mv command." << endl;
+    else if(a=="man cat") // 如果用户输入的是"man cat"命令，输出">>manual for cat command."
+        cout << ">>manual for cat command." << endl;
+    else if(a=="man echo") // 如果用户输入的是"man echo"命令，输出">>manual for echo command."
+        cout << ">>manual for echo command." << endl;
+    else if(a=="man date") // 如果用户输入的是"man date"命令，输出">>manual for date command."
+        cout << ">>manual for date command." << endl;
+    else if(a=="man cal") // 如果用户输入的是"man cal"命令，输出">>manual for cal command."
+        cout << ">>manual for cal command." << endl;
+    else if(a=="web") // 如果用户输入的是"web"命令，提取网站名并使用system()函数打开浏览器访问该网站
+    {
+        string website = a.substr(4); // 提取网站名
+        system(("start " + website).c_str()); // 使用system()函数打开浏览器并访问网站
+    }
+    else if(a=="root") // 如果用户输入的是"root"命令，输出">>Phone is already rooted."
+        cout << ">>Phone is already rooted." << endl;
+    else if(a=="adb devices") // 添加对adb devices命令的处理
+    {
+        system("adb devices"); // 调用系统函数执行adb devices命令
+    }
+    else if(a=="adb shell") // 添加对adb shell命令的处理
+    {
+        system("adb shell"); // 调用系统函数执行adb shell命令
+    }
+    else if(a=="reboot") // 添加对reboot命令的处理
+    {
+        system("reboot"); // 调用系统函数执行reboot命令
+    }
+    else if(a=="shutdown") // 添加对shutdown命令的处理
+    {
+        system("shutdown"); // 调用系统函数执行shutdown命令
+    }
+    else if(a=="update") // 添加对update命令的处理
+    {
+        system("update"); // 调用系统函数执行update命令
+    }
+    else if(a=="install app") // 添加对install app命令的处理
+    {
+        string appName = a.substr(10); // 提取应用名
+        system(("install app " + appName).c_str()); // 调用系统函数执行install app命令
+    }
+    else if(a=="uninstall app") // 添加对uninstall app命令的处理
+    {
+        string appName = a.substr(13); // 提取应用名
+        system(("uninstall app " + appName).c_str()); // 调用系统函数执行uninstall app命令
+    }
+    else if(a=="run app") // 添加对run app命令的处理
+    {
+        string appName = a.substr(7); // 提取应用名
+        system(("run app " + appName).c_str()); // 调用系统函数执行run app命令
+    }
+    else if(a=="stop app") // 添加对stop app命令的处理
+    {
+        string appName = a.substr(8); // 提取应用名
+        system(("stop app " + appName).c_str()); // 调用系统函数执行stop app命令
+    }
+    else if(a=="send message") // 添加对send message命令的处理
+    {
+        string phoneNumber = a.substr(13); // 提取电话号码
+        string message = a.substr(20); // 提取短信内容
+        system(("send message " + phoneNumber + " " + message).c_str()); // 调用系统函数执行send message命令
+    }
+    else if(a=="call") // 添加对call命令的处理
+    {
+        string phoneNumber = a.substr(5); // 提取电话号码
+        system(("call " + phoneNumber).c_str()); // 调用系统函数执行call命令
+    }
+    else if(a=="record video") // 添加对record video命令的处理
+    {
+        system("record video"); // 调用系统函数执行record video命令
+    }
+    else if(a=="stop recording") // 添加对stop recording命令的处理
+    {
+        system("stop recording"); // 调用系统函数执行stop recording命令
+    }
+    else if(a=="play video") // 添加对play video命令的处理
+    {
+        system("play video"); // 调用系统函数执行play video命令
+    }
+    else // 如果用户输入的命令无法识别，输出">>unknown command"
+        cout << ">>unknown command" << endl;
+}
+int main() // 主函数
+{
+    cout << "--Oraco system(原生) version1.19--" << endl; // 输出程序版本信息
+    cout << "--Orachcode studio 出品--" << endl;
+    cout << "--like Linux--" << endl; // 输出程序特性描述
+    do // 循环接收用户输入的命令并调用answers()函数处理
+    {
+        cout << ">>" ;
+        getline(cin,a);
+        answers();
+    } while(a!="exit"); // 当用户输入"exit"命令时退出循环
+    return 0; // 返回0表示程序正常结束
+}
+    
