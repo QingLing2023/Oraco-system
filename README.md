@@ -6,7 +6,9 @@ like Linux（Android）
 
 2.1 下载Oraco系统源代码
 
-首先，从GitHub上下载Oraco系统的源代码：https://github.com/OracoSystem/OracoSystem
+首先，从GitHub上下载Oraco系统的源代码：
+
+https://github.com/username/Oraco-system.git
 
 2.2 编译Oraco系统
 
@@ -290,3 +292,9 @@ Stopping recording... Video saved as video1.mp4.
 
 >>play video video1.mp4
 Playing video... Video playback completed.
+
+
+
+
+
+
