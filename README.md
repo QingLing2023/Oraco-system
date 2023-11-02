@@ -2,32 +2,9 @@
 like Linux（Android）
 
     简介：Oraco系统是一个基于C++编写的原生命令行操作系统。它模拟了Linux的一些基本功能，如文件操作、进程管理等。本教程将详细介绍如何使用Oraco系统，包括如何安装和运行程序，以及如何使用各种内置命令。
- 2. 安装和运行程序
+ 2. 安装程序
 
-2.1 下载Oraco系统源代码
-
-首先，从GitHub上下载Oraco系统的源代码：
-
-https://github.com/username/Oraco-system.git
-
-2.2 编译Oraco系统
-
-解压下载的源代码包，然后在源代码目录下打开终端。执行以下命令来编译Oraco系统：
-
-bash
-g++ -o oraco system.cpp
-
-
-这将生成一个名为`oraco`的可执行文件。
-
-2.3 运行Oraco系统
-
-在终端中输入以下命令来运行Oraco系统：
-
-bash
-./oraco
-
-这将启动Oraco系统的命令行界面。
+    在以下网址中下载：
 
 3. 使用内置命令
 
