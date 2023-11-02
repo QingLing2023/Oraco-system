@@ -1,0 +1,100 @@
+#include<iostream>
+using namespace std;
+string a; // 定义一个字符串变量a，用于存储用户输入的命令
+const string home="csdn.apk github.apk",download="cyrystal.cpp",log="No";
+void answers() // 定义一个函数answers，用于处理用户输入的命令
+{
+    if(a=="cd /home")
+      cout << "/home" << endl;
+    else if(a=="cd /download")
+      cout << "/download" << endl;
+    else if(a=="cd /log")
+      cout << "/log" << endl;  
+    else if(a=="pwd /home")
+      cout << home << endl;  
+    else if(a=="web") // 如果用户输入的是"web"命令，提取网站名并使用system()函数打开浏览器访问该网站
+    {
+        string website = a.substr(4); // 提取网站名
+        system(("start " + website).c_str()); // 使用system()函数打开浏览器并访问网站
+    }
+    else if(a=="root") // 如果用户输入的是"root"命令，输出">>Phone is already rooted."
+        cout << ">>Phone is already rooted." << endl;
+    else if(a=="adb devices") // 添加对adb devices命令的处理
+    {
+        system("adb devices"); // 调用系统函数执行adb devices命令
+    }
+    else if(a=="adb shell") // 添加对adb shell命令的处理
+    {
+        system("adb shell"); // 调用系统函数执行adb shell命令
+    }
+    else if(a=="reboot") // 添加对reboot命令的处理
+    {
+        system("reboot"); // 调用系统函数执行reboot命令
+    }
+    else if(a=="shutdown") // 添加对shutdown命令的处理
+    {
+        system("shutdown"); // 调用系统函数执行shutdown命令
+    }
+    else if(a=="update") // 添加对update命令的处理
+    {
+        system("update"); // 调用系统函数执行update命令
+    }
+    else if(a=="install app") // 添加对install app命令的处理
+    {
+        string appName = a.substr(10); // 提取应用名
+        system(("install app " + appName).c_str()); // 调用系统函数执行install app命令
+    }
+    else if(a=="uninstall app") // 添加对uninstall app命令的处理
+    {
+        string appName = a.substr(13); // 提取应用名
+        system(("uninstall app " + appName).c_str()); // 调用系统函数执行uninstall app命令
+    }
+    else if(a=="run app") // 添加对run app命令的处理
+    {
+        string appName = a.substr(7); // 提取应用名
+        system(("run app " + appName).c_str()); // 调用系统函数执行run app命令
+    }
+    else if(a=="stop app") // 添加对stop app命令的处理
+    {
+        string appName = a.substr(8); // 提取应用名
+        system(("stop app " + appName).c_str()); // 调用系统函数执行stop app命令
+    }
+    else if(a=="send message") // 添加对send message命令的处理
+    {
+        string phoneNumber = a.substr(13); // 提取电话号码
+        string message = a.substr(20); // 提取短信内容
+        system(("send message " + phoneNumber + " " + message).c_str()); // 调用系统函数执行send message命令
+    }
+    else if(a=="call") // 添加对call命令的处理
+    {
+        string phoneNumber = a.substr(5); // 提取电话号码
+        system(("call " + phoneNumber).c_str()); // 调用系统函数执行call命令
+    }
+    else if(a=="record video") // 添加对record video命令的处理
+    {
+        system("record video"); // 调用系统函数执行record video命令
+    }
+    else if(a=="stop recording") // 添加对stop recording命令的处理
+    {
+        system("stop recording"); // 调用系统函数执行stop recording命令
+    }
+    else if(a=="play video") // 添加对play video命令的处理
+    {
+        system("play video"); // 调用系统函数执行play video命令
+    }
+    else // 如果用户输入的命令无法识别，输出">>unknown command"
+        cout << ">>unknown command" << endl;
+}
+int main() // 主函数
+{
+    cout << "--Oraco system(原生) version1.19--" << endl; // 输出程序版本信息
+    cout << "--Orachcode studio 出品--" << endl;
+    cout << "--like Linux--" << endl; // 输出程序特性描述
+    do // 循环接收用户输入的命令并调用answers()函数处理
+    {
+        cout << ">>" ;
+        getline(cin,a);
+        answers();
+    } while(a!="exit"); // 当用户输入"exit"命令时退出循环
+    return 0; // 返回0表示程序正常结束
+}
